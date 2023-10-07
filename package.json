@@ -1,10 +1,10 @@
 {
   "name": "inline-script",
   "description": "",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/inline-script.js",
   "scripts": {
-    "build": "esbuild inline-script.js --minify --sourcemap --outfile=dist/inline-script.js"
+    "build": "esbuild inline-script.js --minify --outfile=dist/inline-script.js"
   },
   "devDependencies": {
     "esbuild": "0.19.4"
