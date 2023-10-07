@@ -1,0 +1,2 @@
+window.addEventListener("load",function(){const r="[script]";function c(i){i.forEach(s=>{const e=s.getAttribute("script");new Function("me",e)(s)})}function o(i,s){i.forEach(e=>{e.type==="childList"&&e.addedNodes.forEach(t=>{if(console.log(t),t.nodeType===1){t.matches(r)&&c([t]);const u=t.querySelectorAll(r);c(u)}})})}new MutationObserver(o).observe(document.body,{childList:!0,subtree:!0});const n=document.querySelectorAll(r);c(n)});
+//# sourceMappingURL=inline-script.js.map
