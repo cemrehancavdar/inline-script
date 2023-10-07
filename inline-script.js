@@ -1,9 +1,10 @@
 window.addEventListener('load', function () {
-    const scriptAttribute = '[script]'
+    let scriptSelector = window.inlineScriptSelector || "script" 
+    console.log(scriptSelector)
 
     function processElementsWithScriptAttribute(elements) {
         elements.forEach((element) => {
-            const scriptValue = element.getAttribute('script');
+            const scriptValue = element.getAttribute(scriptSelector);
 
             new Function('me', scriptValue)(element);
         });
