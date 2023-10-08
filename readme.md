@@ -33,46 +33,46 @@ inline-script can be used by cdn or by downloading.
 
 #### sending and handling custom events [jquery](https://jquery.com) or [cash](https://github.com/fabiospampinato/cash)
 ```js
-    <input script="$(this).on('keyup', ()=> $(this).next().trigger('input-changed', [this.value]))">
-    <h1 script="$(this).on('input-changed', (ev, data)=> $(this).text(data))"> </h1>
+<input script="$(this).on('keyup', ()=> $(this).next().trigger('input-changed', [this.value]))">
+<h1 script="$(this).on('input-changed', (ev, data)=> $(this).text(data))"> </h1>
 ```
 
 #### handling data-fetching on client [jquery](https://jquery.com):
 ```js
-    <article style="width: 500px;" script="$.when(getWeatherOf([39.9, 32.8])).done(data => {
-        $(this).find('h3').text('🌤   '+ data.current_weather.temperature + '°C');
-        $(this).find('h4').text('🌬️   '+data.current_weather.windspeed + ' Wind Speed')
-    })">
-        <header><h1>Weather</h1></header>
-        <main>
-            <h3></h3>
-            <h4></h4>
-        </main>
-        <footer> Open-Meteo Weather API | Free Weather Forecast API for non-commercial use </footer>
-      </article>
+<article style="width: 500px;" script="$.when(getWeatherOf([39.9, 32.8])).done(data => {
+    $(this).find('h3').text('🌤   '+ data.current_weather.temperature + '°C');
+    $(this).find('h4').text('🌬️   '+data.current_weather.windspeed + ' Wind Speed')
+})">
+    <header><h1>Weather</h1></header>
+    <main>
+        <h3></h3>
+        <h4></h4>
+    </main>
+    <footer> Open-Meteo Weather API | Free Weather Forecast API for non-commercial use </footer>
+  </article>
 ```
 helper function in script
 ```html
-    <script>
-        async function getWeatherOf(coordinates) {
-            const [latitude, longitude] = coordinates;
-            const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+<script>
+    async function getWeatherOf(coordinates) {
+        const [latitude, longitude] = coordinates;
+        const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
 
-            try {
-                const response = await fetch(apiUrl);
+        try {
+            const response = await fetch(apiUrl);
 
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch data from Open-Meteo API: ${response.status}`);
-                }
-                console.log(response)
-                const data = await response.json();
-                console.log(data)
-                return data // You can process and display the data as needed
-            } catch (error) {
-                console.error(`Error fetching data from Open-Meteo API: ${error.message}`);
+            if (!response.ok) {
+                throw new Error(`Failed to fetch data from Open-Meteo API: ${response.status}`);
             }
+            console.log(response)
+            const data = await response.json();
+            console.log(data)
+            return data // You can process and display the data as needed
+        } catch (error) {
+            console.error(`Error fetching data from Open-Meteo API: ${error.message}`);
         }
-    </script>
+    }
+</script>
 ```
 
 ##  More context on hypermedia friendly scripting and inline-script
