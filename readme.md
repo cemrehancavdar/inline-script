@@ -5,9 +5,9 @@ inline-script is so small library let's use write your javascript code inline wi
 
 inline-script is second stepping to complete hypermedia api's to have "islands of interacivity". We could also call this hypermedia friendly scripting. 
 
-There are already solutions to this "hyperscript" by htmx, "surreal" by gnat and also "Alpine.js" by calebporzio. They are **_great_**. They all have their unique styles to do dom manipulations. 
+There are already solutions to this [hyperscript](https://hyperscript.org/) and [hx-on](https://htmx.org/attributes/hx-on/) by [htmx](https://htmx.org/), [surreal](https://github.com/gnat/surreal) by [gnat](https://github.com/gnat) and also [alpine.js](https://alpinejs.dev/) by (calebporzio)[https://calebporzio.com/] and more. They are **_great_**. They all have their unique styles to do dom manipulations. 
 
-inline-script is just like <code>onclick</code>, </code>obdblclick</code> events. it is just script attribute with <code>this</code> represents the element itself like <code>this</code> to <code>onclick</code>. So you can wrap <code>$(this)</code> with jquery, jquery-like or whatever library and use it for all your needs. 
+inline-script is just like <code>onclick</code>, </code>obdblclick</code> events. it is just script attribute with <code>this</code> represents the element itself like <code>this</code> to <code>onclick</code>. So you can wrap <code>$(this)</code> with jquery, jquery-like library or whatever and use it for all your needs. 
 
 ## Usage 
 ```js
