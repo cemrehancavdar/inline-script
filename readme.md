@@ -1,6 +1,10 @@
 
 # inline-script
 
+```js
+<tag script="this.someCode()"></tag>
+```
+
 inline-script  is so small library just like <code>[onevent](https://developer.mozilla.org/en-US/docs/Web/Events/Event_handlers#using_onevent_properties)</code> properties. it is just <code>script</code> attribute with <code>this</code> represents the element itself like <code>this</code> to <code>onclick</code>. So you can wrap <code>$(this)</code> with jquery, jquery-like library or whatever and use it for all your needs.
 
 inline-script is second stepping to complete hypermedia api's to have "islands of interacivity". We could also call this hypermedia friendly scripting. 
@@ -19,7 +23,7 @@ inline-script can be used by cdn or by downloading.
 
 #### simple on click change text with without any other library
 ```js
-    <h1 id="test" script="this.addEventListener('click', () => this.innerHTML='changed!')">will change</h1>
+<h1 script="this.addEventListener('click', () => this.innerHTML='changed!')">will change</h1>
 ```
 #### change next element with [jquery](https://jquery.com) or [cash](https://github.com/fabiospampinato/cash)
 ```js
