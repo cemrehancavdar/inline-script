@@ -23,8 +23,8 @@ inline-script can be used by cdn or by downloading.
 ```
 #### change next element with [jquery](https://jquery.com) or [cash](https://github.com/fabiospampinato/cash)
 ```js
-    <h1 script="$(this).on('click', () =>$(this).next().css({'background-color': 'red'}) )">make it red</h1>
-    <span style="height: 100px; width: 100px; background-color: black;">make me red</span>
+    <button script="$(this).on('click', () =>$(this).next().css({'background-color': 'red'}) )">make it red to see</button>
+    <span style="height: 100px; width: 100px; background-color: black;">hello there</span>
 ```
 
 #### sending and handling custom events [jquery](https://jquery.com) or [cash](https://github.com/fabiospampinato/cash)
