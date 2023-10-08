@@ -2,7 +2,7 @@
 # inline-script
 
 ```js
-<tag script="this.someCode()"></tag>
+<tag script="this..."></tag>
 ```
 
 inline-script  is so small library just like <code>[onevent](https://developer.mozilla.org/en-US/docs/Web/Events/Event_handlers#using_onevent_properties)</code> properties. it is just <code>script</code> attribute with <code>this</code> represents the element itself like <code>this</code> to <code>onclick</code>. So you can wrap <code>$(this)</code> with jquery, jquery-like library or whatever and use it for all your needs.
