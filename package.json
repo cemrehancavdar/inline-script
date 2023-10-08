@@ -1,7 +1,7 @@
 {
   "name": "inline-script",
   "description": "",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/inline-script.js",
   "scripts": {
     "build": "esbuild inline-script.js --minify --outfile=dist/inline-script.js"

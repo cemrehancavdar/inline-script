@@ -4,8 +4,7 @@ window.addEventListener('load', function () {
     function processElementsWithScriptAttribute(elements) {
         elements.forEach((element) => {
             const scriptValue = element.getAttribute(scriptSelector);
-
-            new Function('me', scriptValue)(element);
+            new Function(scriptValue).call(element);
         });
     }
 
