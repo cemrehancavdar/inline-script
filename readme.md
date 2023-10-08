@@ -17,12 +17,23 @@ There are already solutions to this _[hyperscript](https://hyperscript.org/)_ an
 inline-script can be used by cdn or by downloading. 
 ### Samples 
 
-#### simple on click change text
+#### simple on click change text with without any other library
 ```js
     <h1 id="test" script="this.addEventListener('click', () => this.innerHTML='changed!')">will change</h1>
 ```
+#### change next element with [jquery](https://jquery.com) or [cash](https://github.com/fabiospampinato/cash)
+```js
+    <h1 script="$(this).on('click', () =>$(this).next().css({'background-color': 'red'}) )">test</h1>
+    <span style="height: 100px; width: 100px; background-color: black;">make me red</span>
+```
 
-#### Handling data-fetching on client:
+#### sending and handling custom events [jquery](https://jquery.com) or [cash](https://github.com/fabiospampinato/cash)
+```js
+    <input script="$(this).on('keyup', ()=> $(this).next().trigger('input-changed', [this.value]))">
+    <h1 script="$(this).on('input-changed', (ev, data)=> $(this).text(data))">some element</h1>
+```
+
+#### handling data-fetching on client:
 ```js
 // with getWeatherOf defined in <script>
 <h1 script="getWeatherOf([39.9, 32.8]).then(data => this.textContent =data.current_weather.temperature + '°C')"></h1>
