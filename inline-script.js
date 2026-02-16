@@ -1,10 +1,20 @@
 window.addEventListener('load', function () {
     const scriptSelector = window.inlineScriptSelector || "script"
     const scriptAttribute = '[' + scriptSelector + ']'
+
     function processElementsWithScriptAttribute(elements) {
         elements.forEach((element) => {
             const scriptValue = element.getAttribute(scriptSelector);
-            new Function(scriptValue).call(element);
+            try {
+                new Function(scriptValue).call(element);
+            } catch (error) {
+                console.error(
+                    '[inline-script] Error on <' + element.tagName.toLowerCase() + '>:',
+                    '\n  Code: ' + scriptValue,
+                    '\n  Error: ' + error.message,
+                    '\n  Element:', element
+                );
+            }
         });
     }
 
@@ -12,7 +22,6 @@ window.addEventListener('load', function () {
         mutationsList.forEach((mutation) => {
             if (mutation.type === 'childList') {
                 mutation.addedNodes.forEach((node) => {
-                    console.log(node)
                     if (node.nodeType === 1) {
                         if (node.matches(scriptAttribute)) {
                             processElementsWithScriptAttribute([node]);
@@ -21,7 +30,6 @@ window.addEventListener('load', function () {
                         processElementsWithScriptAttribute(elementsWithScript);
                     }
                 })
-
             }
         });
     }

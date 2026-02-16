@@ -1,8 +1,12 @@
 {
   "name": "inline-script",
   "description": "",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/inline-script.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cemrehancavdar/inline-script.git"
+  },
   "scripts": {
     "build": "esbuild inline-script.js --minify --outfile=dist/inline-script.js"
   },
